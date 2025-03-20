@@ -94,7 +94,9 @@ const ProductTable: React.FC<ProductTableProps> = ({
                                         Edit
                                     </button>
                                     <button
-                                        onClick={() => onDelete(product.id)}
+                                        onClick={() =>
+                                            onDelete(String(product.id))
+                                        }
                                         className="bg-red-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-red-500 transition cursor-pointer"
                                     >
                                         Delete
