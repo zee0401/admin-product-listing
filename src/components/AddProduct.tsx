@@ -58,9 +58,11 @@ const AddProduct = ({ open, setOpen }: AddProductProps) => {
             toast.success("Product created successfully!");
             setOpen(false);
         } catch (error) {
-                const errorMessage = error instanceof Error ? error.message : "Unknown error";
-                toast.error(`Failed to create product: ${errorMessage}`);
-            }
+            const errorMessage =
+                error instanceof Error
+                    ? error.message
+                    : "Failed to create product . ";
+            toast.error(errorMessage);
         }
     };
 
