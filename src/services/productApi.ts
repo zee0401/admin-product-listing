@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const baseUrl = "http://localhost:3000/products";
+const baseUrl =
+    "https://node-ts-productlisting-production.up.railway.app/products";
 
 const axiosInstance = axios.create({
     baseURL: baseUrl,
