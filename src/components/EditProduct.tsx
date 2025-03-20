@@ -12,13 +12,8 @@ import toast from "react-hot-toast";
 
 import { EditProductProps, Product } from "@/types/types";
 
-// interface Product {
-//     id: string;
-//     sku: string;
-//     name: string;
-//     price: string;
-//     images: { id: number; url: string }[];
-// }
+const baseUrl: string =
+    "https://node-ts-productlisting-production.up.railway.app/";
 
 const EditProduct: React.FC<EditProductProps> = ({
     product,
@@ -71,7 +66,6 @@ const EditProduct: React.FC<EditProductProps> = ({
         }
     };
 
-    // Handle form submission (saving changes)
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
 
@@ -174,7 +168,7 @@ const EditProduct: React.FC<EditProductProps> = ({
                                 {updatedProduct.images.map((img) => (
                                     <div key={img.id} className="relative">
                                         <img
-                                            src={img.url}
+                                            src={`${baseUrl}${img.url}`}
                                             alt={`Product ${img.id}`}
                                             className="w-24 h-24 object-cover rounded-md border border-gray-700"
                                         />
