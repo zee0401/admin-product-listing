@@ -19,7 +19,8 @@ const ShowProduct: React.FC<ShowProductProps> = ({
     open,
     setOpen,
 }) => {
-    const baseUrl: string = "http://localhost:3000";
+    const baseUrl: string =
+        "https://node-ts-productlisting-production.up.railway.app/";
     return (
         <Dialog open={open} onOpenChange={setOpen}>
             <DialogContent className="bg-gray-900 text-white border border-gray-700">
