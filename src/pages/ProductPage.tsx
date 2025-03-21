@@ -80,7 +80,7 @@ const ProductPage = () => {
             />
 
             {addProductOpen && (
-                <AddProduct open={addProductOpen} setOpen={setAddProductOpen} />
+                <AddProduct open={addProductOpen} setOpen={setAddProductOpen}  refreshProducts={fetchProducts} />
             )}
 
             {selectedProduct && (
