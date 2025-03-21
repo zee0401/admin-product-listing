@@ -20,6 +20,7 @@ interface Product {
 interface AddProductProps {
     open: boolean;
     setOpen: (open: boolean) => void;
+   refreshProducts: () => void;
 }
 
 const AddProduct = ({ open, setOpen }: AddProductProps) => {
@@ -55,6 +56,7 @@ const AddProduct = ({ open, setOpen }: AddProductProps) => {
         try {
             await createProduct(formData);
             toast.success("Product created successfully!");
+            refreshProducts();
             setOpen(false);
         } catch (error) {
             const errorMessage =
