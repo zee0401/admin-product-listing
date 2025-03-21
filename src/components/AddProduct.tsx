@@ -23,7 +23,7 @@ interface AddProductProps {
    refreshProducts: () => void;
 }
 
-const AddProduct = ({ open, setOpen }: AddProductProps) => {
+const AddProduct = ({ open, setOpen, refreshProducts }: AddProductProps) => {
     const [product, setProduct] = useState<Product>({
         sku: "",
         name: "",
