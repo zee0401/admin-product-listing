@@ -19,8 +19,6 @@ const ShowProduct: React.FC<ShowProductProps> = ({
     open,
     setOpen,
 }) => {
-    const baseUrl: string =
-        "https://node-ts-productlisting-production.up.railway.app/";
     return (
         <Dialog open={open} onOpenChange={setOpen}>
             <DialogContent className="bg-gray-900 text-white border border-gray-700">
@@ -49,7 +47,7 @@ const ShowProduct: React.FC<ShowProductProps> = ({
                         {product.images.map((img, index) => (
                             <img
                                 key={index}
-                                src={`${baseUrl}${img.url}`}
+                                src={img.url}
                                 alt={`Product ${index}`}
                                 className="w-30 h-30 object-cover
                              rounded-md "

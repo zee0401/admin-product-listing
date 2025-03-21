@@ -35,7 +35,7 @@ const ProductPage = () => {
             return;
         }
 
-        console.log("Editing Product:", product); // ✅ Debugging: Ensure full product object is passed
+        console.log("Editing Product:", product);
         setSelectedProduct(product);
         setEditProductOpen(true);
     };
@@ -44,7 +44,7 @@ const ProductPage = () => {
         if (window.confirm("Are you sure you want to delete this product?")) {
             try {
                 await deleteProduct(id);
-                fetchProducts(); // ✅ Refresh product list after deletion
+                fetchProducts();
                 toast.success("Product deleted successfully");
             } catch (error) {
                 toast.error("Error deleting product");
@@ -58,7 +58,6 @@ const ProductPage = () => {
                 Product List
             </h1>
 
-            {/* Add Product Button */}
             <div className="flex justify-end mb-3">
                 <button
                     className="bg-blue-500 text-white px-4 py-2 rounded-lg font-semibold hover:bg-indigo-500 transition cursor-pointer"
@@ -68,7 +67,6 @@ const ProductPage = () => {
                 </button>
             </div>
 
-            {/* Product Table */}
             <ProductTable
                 products={products}
                 onEdit={handleEdit}

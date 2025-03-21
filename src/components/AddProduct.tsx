@@ -4,7 +4,6 @@ import {
     DialogContent,
     DialogHeader,
     DialogTitle,
-    DialogTrigger,
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -68,12 +67,6 @@ const AddProduct = ({ open, setOpen }: AddProductProps) => {
 
     return (
         <Dialog open={open} onOpenChange={setOpen}>
-            <DialogTrigger asChild>
-                <Button className="bg-blue-600 text-white px-4 py-2 rounded-md font-semibold hover:bg-blue-700 transition">
-                    Add Product
-                </Button>
-            </DialogTrigger>
-
             <DialogContent className="bg-gray-900 text-white border border-gray-700">
                 <DialogHeader>
                     <DialogTitle className="text-neonGreen">

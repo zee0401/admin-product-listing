@@ -12,9 +12,6 @@ import toast from "react-hot-toast";
 
 import { EditProductProps, Product } from "@/types/types";
 
-const baseUrl: string =
-    "https://node-ts-productlisting-production.up.railway.app/";
-
 const EditProduct: React.FC<EditProductProps> = ({
     product,
     open,
@@ -51,7 +48,7 @@ const EditProduct: React.FC<EditProductProps> = ({
         setLoading(true);
         try {
             await deleteProductImage(Number(updatedProduct.id), imageId);
-            setRemovedImageIds((prev) => [...prev, imageId]); // Track removed image IDs
+            setRemovedImageIds((prev) => [...prev, imageId]);
             toast.success("Image deleted successfully.");
 
             setUpdatedProduct((prevProduct) => ({
@@ -88,7 +85,7 @@ const EditProduct: React.FC<EditProductProps> = ({
 
         try {
             const response = await updateProduct(formData);
-            if (response?.product) {
+            if (response) {
                 toast.success("Product updated successfully!");
                 refreshProducts();
                 setOpen(false);
@@ -168,7 +165,7 @@ const EditProduct: React.FC<EditProductProps> = ({
                                 {updatedProduct.images.map((img) => (
                                     <div key={img.id} className="relative">
                                         <img
-                                            src={`${baseUrl}${img.url}`}
+                                            src={img.url}
                                             alt={`Product ${img.id}`}
                                             className="w-24 h-24 object-cover rounded-md border border-gray-700"
                                         />
