@@ -19,6 +19,12 @@ const ProductPage = () => {
         fetchProducts();
     }, []);
 
+     useEffect(() => {
+        if (!addProductOpen) {
+            fetchProducts();
+        }
+    }, [addProductOpen]);
+
     const fetchProducts = async () => {
         try {
             const response = await getAllProducts();
